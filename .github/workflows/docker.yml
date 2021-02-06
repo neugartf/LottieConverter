@@ -17,4 +17,7 @@ jobs:
        with:
          push: true
          tags: neugartf/lottieconverter:latest
-         platforms: linux/arm/v6,linux/arm/v7 
+         platforms: linux/arm/v6,linux/arm/v7
+         registry: ghcr.io
+         username: ${{ github.repository_owner }}
+         password: ${{ secrets.GHCR }}
