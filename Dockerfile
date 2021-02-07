@@ -1,4 +1,4 @@
-FROM alpine:3.13 AS build
+FROM alpine:3.13.1 AS build
 
 WORKDIR /build
 
@@ -14,7 +14,7 @@ RUN apk add --no-cache git build-base cmake libpng-dev zlib-dev \
 COPY . /build
 RUN make CONF=Release
 
-FROM alpine:3.13
+FROM alpine:3.13.1
 
 RUN apk add --no-cache zlib libpng
 COPY --from=build /usr/lib/librlottie.so* /usr/lib/
